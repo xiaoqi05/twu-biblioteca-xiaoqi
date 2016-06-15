@@ -1,7 +1,13 @@
 package com.twu.biblioteca;
 
-class Biblioteca {
+import java.util.List;
 
+class Biblioteca {
+    private List<Book> bookList;
+
+    Biblioteca(List<Book> bookList) {
+        this.bookList = bookList;
+    }
 
     void showWelcomeMessage() {
         consolePrint("welcome to Biblioteca");
@@ -11,20 +17,10 @@ class Biblioteca {
         System.out.println(printContent);
     }
 
-    //book author:xiaoqi publishDate:2014-5 bookName:times ISBN: 92432309409
-    /*
-    * 作者: Higashino Keigo
-出版社: 南海出版公司
-原作名: ナミヤ雑貨店の奇蹟
-译者: 李盈春
-出版年: 2014-5
-页数: 291
-定价: 39.50元
-装帧: Hardcover
-丛书: 新经典文库·东野圭吾作品
-ISBN: 9787544270878
-    * */
-    void showAllLibraryBooks() {
-        consolePrint("bookName:times author:xiaoqi publishDate:2014-5");
+
+    void showAllLibraryBooks(List<Book> bookList) {
+        for (Book book : bookList) {
+            consolePrint(book.showBook());
+        }
     }
 }

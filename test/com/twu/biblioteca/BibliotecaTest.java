@@ -6,19 +6,26 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class BibliotecaTest {
     private Biblioteca biblioteca;
-    private ByteArrayOutputStream bytes;
+    private List<Book> bookList;
 
     @Before
     public void setUp() {
-        biblioteca = new Biblioteca();
+        bookList = new ArrayList<Book>();
+        bookList.add(new Book("xiaoqi", "time", "2014-5", 9992342, true));
+        biblioteca = new Biblioteca(bookList);
         bytes = new ByteArrayOutputStream();
         System.setOut(new PrintStream(bytes));
     }
+
+    private ByteArrayOutputStream bytes;
 
     @Test
     public void shouldShowWelcomeMessageWhenStartTheApplication() throws Exception {
@@ -29,8 +36,8 @@ public class BibliotecaTest {
 
     @Test
     public void shouldShowAllLibraryBooksAfterWelcomeMessage() throws Exception {
-        biblioteca.showAllLibraryBooks();
-        assertEquals("bookName:times author:xiaoqi publishDate:2014-5\n", bytes.toString());
+        biblioteca.showAllLibraryBooks(bookList);
+        assertEquals("bookName=time, author=xiaoqi,isbn=9992342, publishDate=2014-5\n", bytes.toString());
     }
 
 

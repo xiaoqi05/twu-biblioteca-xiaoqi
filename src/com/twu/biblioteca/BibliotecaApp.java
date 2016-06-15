@@ -4,9 +4,9 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
         //System.out.println("Hello, world!");
-        Biblioteca biblioteca = new Biblioteca();
+      /*  Biblioteca biblioteca = new Biblioteca();
         biblioteca.showWelcomeMessage();
-        biblioteca.showAllLibraryBooks();
+        biblioteca.showAllLibraryBooks();*/
 
     }
 }
