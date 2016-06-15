@@ -14,11 +14,11 @@ public class Biblioteca {
     }
 
     void showWelcomeMessage() {
-        consolePrint("welcome to Biblioteca");
+        consolePrint("welcome to Biblioteca\n");
     }
 
     private void consolePrint(String printContent) {
-        System.out.println(printContent);
+        System.out.print(printContent);
     }
 
 
@@ -26,11 +26,13 @@ public class Biblioteca {
         for (Book book : bookList) {
             consolePrint(book.showBook());
         }
+        consolePrint("\n");
     }
 
     void showMenu() {
         for (Option option : optionList) {
-            consolePrint(option.getMenuString());
+            consolePrint(option.getMenuString()+"  ");
         }
+        consolePrint("\n");
     }
 }
