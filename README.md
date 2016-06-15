@@ -48,7 +48,7 @@ The requirements for the first release of Biblioteca are given below.
 - Main Menu  - As a customer, instead of automatically seeing the book list, I would like to see a list of options and be able to choose one. For now, the only option should be 'List Books'. All future options should be added to this menu also.
 
 - Invalid Menu Option - As a customer, I would like to be notified when I choose an invalid option with the message “Select a valid option!”, so that I can know when I need to re-enter my choice.
-Quit - As a customer, I would like to continue choosing options until I choose to 'Quit'.
+- Quit - As a customer, I would like to continue choosing options until I choose to 'Quit'.
 
 - Checkout Book - As a librarian, I would like customers to be able to check-out a book. Checked out books should not appear in the list of all library books.
 
