@@ -10,5 +10,6 @@ public class returnBook extends Option {
     @Override
     public void run(Biblioteca biblioteca) {
         biblioteca.returnBook();
+        biblioteca.showMenu();
     }
 }

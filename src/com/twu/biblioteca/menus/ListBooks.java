@@ -11,5 +11,6 @@ public class ListBooks extends Option {
     @Override
     public void run(Biblioteca biblioteca) {
         biblioteca.showAllLibraryBooks();
+        biblioteca.showMenu();
     }
 }

@@ -76,11 +76,9 @@ public class Biblioteca {
                 consolePrint(book.showBook() + "\n");
             }
         }
-        consolePrint("\n");
-        showMenu();
     }
 
-    void showMenu() {
+    public void showMenu() {
         for (Option option : optionList) {
             consolePrint(option.getMenuString() + "  ");
         }
@@ -103,7 +101,6 @@ public class Biblioteca {
         String userInput = scanner.nextLine();
         if (!isNumeric(userInput) || userInput.equals("")) {
             showCheckOutUnSuccessMessage();
-            showMenu();
             return;
         }
         boolean isValidBook = false;
@@ -122,7 +119,6 @@ public class Biblioteca {
         if (!isValidBook) {
             showCheckOutUnSuccessMessage();
         }
-        showMenu();
     }
 
     private void showCheckOutUnSuccessMessage() {
@@ -138,7 +134,6 @@ public class Biblioteca {
         String userInput = scanner.nextLine();
         if (!isNumeric(userInput) || userInput.equals("")) {
             showReturnUnSuccessMessage();
-            showMenu();
             return;
         }
         boolean isValidBook = false;
@@ -157,7 +152,6 @@ public class Biblioteca {
         if (!isValidBook) {
             showReturnUnSuccessMessage();
         }
-        showMenu();
     }
 
     private void showReturnUnSuccessMessage() {

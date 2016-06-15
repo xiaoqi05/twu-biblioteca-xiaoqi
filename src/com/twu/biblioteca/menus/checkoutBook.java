@@ -10,5 +10,6 @@ public class checkoutBook extends Option {
     @Override
     public void run(Biblioteca biblioteca) {
         biblioteca.checkoutBook();
+        biblioteca.showMenu();
     }
 }

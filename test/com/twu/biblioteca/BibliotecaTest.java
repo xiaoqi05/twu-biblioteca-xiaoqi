@@ -40,13 +40,13 @@ public class BibliotecaTest {
     @Test
     public void shouldShowAllLibraryBooksAfterWelcomeMessage() throws Exception {
         biblioteca.showAllLibraryBooks();
-        assertEquals("bookName=time, author=xiaoqi,isbn=9992342, publishDate=2014-5\n", bytes.toString());
+        assertEquals("ShowAllBooks :\n" + "bookName=time, author=xiaoqi,isbn=9992342, publishDate=2014-5\n", bytes.toString());
     }
 
     @Test
     public void shouldShowMenu() throws Exception {
         biblioteca.showMenu();
-        assertEquals("1:ShowAllBook\n", bytes.toString());
+        assertEquals("1:ShowAllBook  \n", bytes.toString());
 
     }
 }
