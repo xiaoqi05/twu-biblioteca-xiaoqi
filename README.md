@@ -32,7 +32,7 @@ DONE !
 
 #Assignment: Biblioteca Release 1
 ##Business Case
-The Bangalore Public Library has approached us to design and implement a Library Management System for them. Based on their requirements, we have decided to develop a new system named Biblioteca. Since the library has a large list of requirements, we will be making multiple releases of Biblioteca, with each release incrementally adding more functionality.
+The Bangalore Public Library has approached us to design and implement a Library Management System for them. Based on their requirements, we have decided to develop a new system named Biblioteca. Since the library has a large list of requirements, we will be making multiple releases of Biblioteca, with each release incrementally adding more functionality. 
 
 In order to easily add more functionality in the future as well as maintain a high level of quality, Biblioteca will be built using a test driven approach.
 
@@ -74,7 +74,7 @@ Quit - As a customer, I would like to continue choosing options until I choose t
 
 - Download and extract the Biblioteca skeleton code.
 
-- Follow the instructions in the included README file to create your project on GitHub.
+- Follow the instructions in the included README file to create your project on GitHub. 
 
 - Use TDD to write code that fulfills the requirements for Biblioteca.
 
