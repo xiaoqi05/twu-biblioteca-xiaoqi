@@ -9,6 +9,6 @@ public class Quit extends Option {
 
     @Override
     public void run(Biblioteca biblioteca) {
-
+        biblioteca.quit();
     }
 }

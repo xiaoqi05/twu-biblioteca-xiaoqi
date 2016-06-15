@@ -15,9 +15,7 @@ public class BibliotecaApp {
         optionList.add(new ListBooks("ShowAllBook", 1));
         optionList.add(new Quit("Quit", 2));
         Biblioteca biblioteca = new Biblioteca(bookList, optionList);
-        biblioteca.showWelcomeMessage();
-        biblioteca.showAllLibraryBooks();
-        biblioteca.showMenu();
+        biblioteca.start();
 
     }
 }
