@@ -70,6 +70,7 @@ public class Biblioteca {
 
 
     public void showAllLibraryBooks() {
+        consolePrint("ShowAllBooks :\n");
         for (Book book : bookList) {
             consolePrint(book.showBook());
         }
@@ -84,6 +85,7 @@ public class Biblioteca {
     }
 
     private boolean isNumeric(String str) {
+        if (str.equals("")) return false;
         Pattern pattern = Pattern.compile("[0-9]*");
         return pattern.matcher(str).matches();
     }
@@ -91,5 +93,13 @@ public class Biblioteca {
     public void quit() {
         this.isRunning = false;
         consolePrint("Quit");
+    }
+
+    public void checkoutBook() {
+
+    }
+
+    public void returnBook() {
+
     }
 }
