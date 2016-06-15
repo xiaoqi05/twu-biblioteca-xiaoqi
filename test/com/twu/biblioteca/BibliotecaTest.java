@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.junit.Assert.assertEquals;
+
 public class BibliotecaTest {
     private Biblioteca biblioteca;
     private ByteArrayOutputStream bytes;
@@ -21,8 +23,15 @@ public class BibliotecaTest {
     @Test
     public void shouldShowWelcomeMessageWhenStartTheApplication() throws Exception {
         biblioteca.showWelcomeMessage();
-        Assert.assertEquals("welcome to Biblioteca\n", bytes.toString());
+        assertEquals("welcome to Biblioteca\n", bytes.toString());
 
     }
+
+    @Test
+    public void shouldShowAllLibraryBooksAfterWelcomeMessage() throws Exception {
+        biblioteca.showAllLibraryBooks();
+        assertEquals("bookName:times author:xiaoqi publishDate:2014-5\n", bytes.toString());
+    }
+
 
 }
