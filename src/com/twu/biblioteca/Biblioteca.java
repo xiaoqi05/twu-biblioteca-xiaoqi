@@ -29,7 +29,7 @@ public class Biblioteca {
 
     private void showOptionAccordingToInput() {
         String userInput = scanner.nextLine();
-        if (!checkInputIsValid(userInput)) {
+        if (!checkMenuInputIsValid(userInput)) {
             showErrorInputMessage();
             return;
         }
@@ -42,7 +42,7 @@ public class Biblioteca {
 
     }
 
-    private boolean checkInputIsValid(String input) {
+    private boolean checkMenuInputIsValid(String input) {
         if (isNumeric(input)) {
             int inputMenuId = Integer.parseInt(input);
             return !(inputMenuId <= 0 || inputMenuId > optionList.size());
@@ -72,9 +72,12 @@ public class Biblioteca {
     public void showAllLibraryBooks() {
         consolePrint("ShowAllBooks :\n");
         for (Book book : bookList) {
-            consolePrint(book.showBook());
+            if (book.isInLibrary()) {
+                consolePrint(book.showBook() + "\n");
+            }
         }
         consolePrint("\n");
+        showMenu();
     }
 
     void showMenu() {
@@ -96,10 +99,72 @@ public class Biblioteca {
     }
 
     public void checkoutBook() {
+        consolePrint("checkout book by isbn:\n");
+        String userInput = scanner.nextLine();
+        if (!isNumeric(userInput) || userInput.equals("")) {
+            showCheckOutUnSuccessMessage();
+            showMenu();
+            return;
+        }
+        boolean isValidBook = false;
+        for (Book book : bookList) {
+            if (book.getIsbn() == Integer.parseInt(userInput)) {
+                isValidBook = true;
+                boolean isCheckoutSuccess = book.checkOutBook();
+                if (isCheckoutSuccess) {
+                    consolePrint("you have checkout this book:\n" + book.showBook() + "\n");
+                    showCheckOutSuccessMessage();
+                } else {
+                    showCheckOutUnSuccessMessage();
+                }
+            }
+        }
+        if (!isValidBook) {
+            showCheckOutUnSuccessMessage();
+        }
+        showMenu();
+    }
 
+    private void showCheckOutUnSuccessMessage() {
+        consolePrint("That book is not available\n");
+    }
+
+    private void showCheckOutSuccessMessage() {
+        consolePrint("Thank you! Enjoy the book\n");
     }
 
     public void returnBook() {
+        consolePrint("return book by isbn:\n");
+        String userInput = scanner.nextLine();
+        if (!isNumeric(userInput) || userInput.equals("")) {
+            showReturnUnSuccessMessage();
+            showMenu();
+            return;
+        }
+        boolean isValidBook = false;
+        for (Book book : bookList) {
+            if (book.getIsbn() == Integer.parseInt(userInput)) {
+                isValidBook = true;
+                boolean isReturnSuccess = book.returnBook();
+                if (isReturnSuccess) {
+                    consolePrint("you have return this book:\n" + book.showBook() + "\n");
+                    showReturnSuccessMessage();
+                } else {
+                    showReturnUnSuccessMessage();
+                }
+            }
+        }
+        if (!isValidBook) {
+            showReturnUnSuccessMessage();
+        }
+        showMenu();
+    }
 
+    private void showReturnUnSuccessMessage() {
+        consolePrint("That is not a valid book to return\n");
+    }
+
+    private void showReturnSuccessMessage() {
+        consolePrint("Thank you for returning the book\n");
     }
 }
