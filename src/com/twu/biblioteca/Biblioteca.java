@@ -1,12 +1,16 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.menus.Option;
+
 import java.util.List;
 
-class Biblioteca {
+public class Biblioteca {
     private List<Book> bookList;
+    private List<Option> optionList;
 
-    Biblioteca(List<Book> bookList) {
+    Biblioteca(List<Book> bookList, List<Option> optionList) {
         this.bookList = bookList;
+        this.optionList = optionList;
     }
 
     void showWelcomeMessage() {
@@ -18,9 +22,15 @@ class Biblioteca {
     }
 
 
-    void showAllLibraryBooks(List<Book> bookList) {
+    public void showAllLibraryBooks() {
         for (Book book : bookList) {
             consolePrint(book.showBook());
+        }
+    }
+
+    void showMenu() {
+        for (Option option : optionList) {
+            consolePrint(option.getMenuString());
         }
     }
 }
