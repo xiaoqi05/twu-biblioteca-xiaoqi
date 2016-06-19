@@ -34,11 +34,4 @@ public class Book {
         return true;
     }
 
-    public boolean isInLibrary() {
-        return isInLibrary;
-    }
-
-    private void setInLibrary(boolean inLibrary) {
-        isInLibrary = inLibrary;
-    }
 }
