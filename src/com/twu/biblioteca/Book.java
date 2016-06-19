@@ -34,4 +34,11 @@ public class Book {
         return true;
     }
 
+    public boolean isInLibrary() {
+        return isInLibrary;
+    }
+
+    public int getIsbn() {
+        return isbn;
+    }
 }

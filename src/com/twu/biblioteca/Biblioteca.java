@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import static com.twu.biblioteca.Printer.consolePrint;
+
 public class Biblioteca {
     private List<Book> bookList;
     private List<Option> optionList;
@@ -63,9 +65,6 @@ public class Biblioteca {
         consolePrint("welcome to Biblioteca\n");
     }
 
-    private void consolePrint(String printContent) {
-        System.out.print(printContent);
-    }
 
     public void showAllLibraryBooks() {
         consolePrint("ShowAllBooks :\n");
