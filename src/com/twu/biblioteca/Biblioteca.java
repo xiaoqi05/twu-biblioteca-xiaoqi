@@ -12,12 +12,12 @@ public class Biblioteca {
     private Scanner scanner = new Scanner(System.in);
     private boolean isRunning = true;
 
-    Biblioteca(List<Book> bookList, List<Option> optionList) {
+    public Biblioteca(List<Book> bookList, List<Option> optionList) {
         this.bookList = bookList;
         this.optionList = optionList;
     }
 
-    void start() {
+    public void start() {
         showWelcomeMessage();
         showAllLibraryBooks();
         showMenu();
@@ -55,19 +55,17 @@ public class Biblioteca {
         consolePrint("please input menu id:\n");
     }
 
-
     private void showErrorInputMessage() {
         consolePrint("Select a valid option!\n");
     }
 
-    void showWelcomeMessage() {
+    public void showWelcomeMessage() {
         consolePrint("welcome to Biblioteca\n");
     }
 
     private void consolePrint(String printContent) {
         System.out.print(printContent);
     }
-
 
     public void showAllLibraryBooks() {
         consolePrint("ShowAllBooks :\n");

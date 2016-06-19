@@ -1,13 +1,13 @@
 package com.twu.biblioteca;
 
-class Book {
+public class Book {
     private String author;
     private String bookName;
     private String publishDate;
     private int isbn;
     private boolean isInLibrary;
 
-    Book(String author, String bookName, String publishDate, int isbn, boolean isInLibrary) {
+    public Book(String author, String bookName, String publishDate, int isbn, boolean isInLibrary) {
         this.author = author;
         this.bookName = bookName;
         this.publishDate = publishDate;
@@ -15,65 +15,26 @@ class Book {
         this.isInLibrary = isInLibrary;
     }
 
-    String showBook() {
+    public String showBook() {
         return "bookName=" + bookName +
                 ", author=" + author +
                 ",isbn=" + isbn +
                 ", publishDate=" + publishDate;
     }
 
-    /**
-     * @return false means check fail means true check success
-     */
-    boolean checkOutBook() {
+    public boolean checkOutBook() {
         if (!isInLibrary) return false;
-        setInLibrary(false);
+        isInLibrary = false;
         return true;
     }
 
-    /**
-     * @return false means return fail means true return success
-     */
-    boolean returnBook() {
+    public boolean returnBook() {
         if (isInLibrary) return false;
-        setInLibrary(true);
+        isInLibrary = true;
         return true;
     }
 
-
-    String getAuthor() {
-        return author;
-    }
-
-    void setAuthor(String author) {
-        this.author = author;
-    }
-
-    String getBookName() {
-        return bookName;
-    }
-
-    void setBookName(String bookName) {
-        this.bookName = bookName;
-    }
-
-    String getPublishDate() {
-        return publishDate;
-    }
-
-    void setPublishDate(String publishDate) {
-        this.publishDate = publishDate;
-    }
-
-    int getIsbn() {
-        return isbn;
-    }
-
-    void setIsbn(int isbn) {
-        this.isbn = isbn;
-    }
-
-    boolean isInLibrary() {
+    public boolean isInLibrary() {
         return isInLibrary;
     }
 

@@ -2,8 +2,8 @@ package com.twu.biblioteca.menus;
 
 import com.twu.biblioteca.Biblioteca;
 
-public class checkoutBook extends Option {
-    public checkoutBook(String name, int id) {
+public class CheckoutBook extends Option {
+    public CheckoutBook(String name, int id) {
         super(name, id);
     }
 

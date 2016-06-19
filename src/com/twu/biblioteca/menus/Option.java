@@ -6,7 +6,7 @@ public abstract class Option {
     private String name;
     private int id;
 
-    Option(String name, int id) {
+    public Option(String name, int id) {
         this.name = name;
         this.id = id;
     }
